@@ -1,0 +1,29 @@
+:root {
+	--max-width: 1200px;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, sans-serif;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.cta-link {
+	background-color: #ff6200;
+	color: #fff;
+	padding: 0.35rem 0.75rem;
+	font-weight: 500;
+	border-radius: 0.25em;
+}
+
+span {
+	line-height: 1;
+}
