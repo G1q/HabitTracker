@@ -24,6 +24,12 @@ a.cta-link {
 	border-radius: 0.25em;
 }
 
+@media (width < 600px) {
+	a.cta-link span {
+		display: none;
+	}
+}
+
 span {
 	line-height: 1;
 }

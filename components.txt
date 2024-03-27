@@ -1,11 +1,11 @@
 Components: 
-- navbar
-- logout button
+- navbar✔
+- logout button✔
 - buttons
 - inputs
 - habit table
 - calendar (multiple select?)
-- logo
+- logo✔
 - container for icons / colors
 - color till
 - icon till +?
@@ -13,8 +13,8 @@ Components:
 
 Pages: 
 - Homepage
-- Register
-- Login
+- Register✔
+- Login✔
 - Add habit
 - Edit habit
 - Individual habit
@@ -35,10 +35,10 @@ Pages:
 - Changelog
 
 Contexts:
-- settings: theme, lang, timezone
-- role
-- username
-- userID
+- settings: theme, lang✔
+- role✔
+- username✔
+- userID✔
 
 API:
 - user ✔
