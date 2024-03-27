@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout'
 import { AuthProvider } from './contexts/AuthContext'
 import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
+import Homepage from './pages/Homepage/Homepage'
 
 function App() {
 	return (
@@ -15,7 +16,7 @@ function App() {
 					>
 						<Route
 							index
-							element={<h1>Homepage</h1>}
+							element={<Homepage />}
 						/>
 						<Route
 							path="/login"

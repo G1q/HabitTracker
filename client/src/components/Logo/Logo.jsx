@@ -11,7 +11,7 @@ const Logo = () => {
 				src="https://img.freepik.com/free-vector/cloud-logo-initial-colorful-gradient_343694-1299.jpg"
 				alt="habit tracker logo"
 			/>
-			<span>HabitTracker</span>
+			<span>HabitsTracker</span>
 		</Link>
 	)
 }

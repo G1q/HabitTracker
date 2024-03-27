@@ -1,0 +1,6 @@
+.habits-empty {
+	height: 50vh;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
