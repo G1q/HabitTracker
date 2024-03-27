@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import './Homepage.css'
 import axiosInstance from '../../config/axios.config.js'
+import HabitCard from '../../components/HabitCard/HabitCard.jsx'
 
 const Homepage = () => {
     const { isLoggedIn, getUserId } = useAuth()
@@ -24,17 +25,20 @@ const Homepage = () => {
         }
     }
 
+    // TODO: delete habit - update user
+
     return (
         <section className='user-section'>
             {isLoggedIn() && (
-                <div className='user-section__container'>
+                <>
                     <h1 className='user-section__title'>Habits Tracker</h1>
                     {error}
                     <div className="habits">
                         {
                             user.habits && user.habits.length > 0 ? (
-                                // TODO: Create list of habits
-                                <p>Test</p>
+                                user.habits.map(habit => (
+                                    <HabitCard key={habit._id} habit={habit} />
+                                ))
                             ) : (
                                 <div className='habits-empty'>
                                     <div className="habits-empty__container">
@@ -44,10 +48,10 @@ const Homepage = () => {
                                 </div>
                             )
                         }
-                    </div>
-                </div>
+                    </div >
+                </>
             )}
-        </section>
+        </section >
     )
 }
 

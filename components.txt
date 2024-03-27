@@ -12,11 +12,11 @@ Components:
 - completed button / 1 or more steps
 
 Pages: 
-- Homepage
+- Homepage✔
 - Register✔
 - Login✔
-- Add habit
-- Edit habit
+- Add habit✔
+- Edit habit✔
 - Individual habit
 - User / profile page
 - User settings

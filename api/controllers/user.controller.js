@@ -92,4 +92,32 @@ const deleteUser = async (req, res) => {
 	}
 }
 
-module.exports = { createUser, getUsers, getUser, updateUser, deleteUser }
+// User habits
+const addHabit = async (req, res) => {
+	const { id } = req.params
+	const { habits } = req.body
+
+	try {
+		const user = await User.findById(id)
+
+		const updatedUser = await User.findByIdAndUpdate(id, { habits }, { new: true })
+
+		res.status(200).json(updatedUser)
+	} catch (error) {
+		res.status(500).json({ message: 'Internal server error' })
+	}
+}
+
+const getHabits = async (req, res) => {
+	const { id } = req.params
+
+	try {
+		const user = await User.findById(id).select('-password')
+
+		res.status(200).json(user.habits)
+	} catch (error) {
+		res.status(500).json({ message: 'Internal server error' })
+	}
+}
+
+module.exports = { createUser, getUsers, getUser, updateUser, deleteUser, addHabit, getHabits }

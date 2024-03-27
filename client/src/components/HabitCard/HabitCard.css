@@ -1,0 +1,54 @@
+.habit__card {
+	border: 1px solid #888;
+	border-radius: 0.25rem;
+	padding: 1rem;
+	box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.habit__card--header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.habit__card--title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1.25rem;
+	margin: 0;
+	line-height: 1;
+}
+
+.habit__card--icon {
+	width: 1rem;
+	aspect-ratio: 1;
+}
+
+.habit__card--title span {
+	line-height: 1;
+}
+
+.habit__card--header button {
+	color: white;
+	background-color: forestgreen;
+	border: none;
+	cursor: pointer;
+}
+
+.habit__card--content {
+}
+
+.habit__card--description {
+	font-size: 0.875rem;
+}
+
+.habit__card--months {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.habit__card--current-month {
+	margin: 0;
+}

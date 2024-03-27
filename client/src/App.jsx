@@ -4,6 +4,8 @@ import { AuthProvider } from './contexts/AuthContext'
 import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import Homepage from './pages/Homepage/Homepage'
+import AddHabit from './pages/AddHabit/AddHabit'
+import EditHabit from './pages/EditHabit/EditHabit'
 
 function App() {
 	return (
@@ -28,11 +30,11 @@ function App() {
 						/>
 						<Route
 							path="/habits/new"
-							element={<h1>Add new habit</h1>}
+							element={<AddHabit />}
 						/>
 						<Route
 							path="/habits/edit"
-							element={<h1>Edit habit</h1>}
+							element={<EditHabit />}
 						/>
 						<Route
 							path="/habits/:id"
