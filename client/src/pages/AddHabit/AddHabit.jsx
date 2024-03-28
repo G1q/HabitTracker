@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import axiosInstance from '../../config/axios.config.js'
 import { formatDate } from '../../utilities/formatDate.js'
+import { ICONS } from '../../data/icons'
+import { COLORS } from '../../data/colors.js'
+import GridSelector from '../../components/GridSelector/GridSelector.jsx'
+
 
 const AddHabit = () => {
     const { isLoggedIn, getUserId } = useAuth()
@@ -39,12 +43,13 @@ const AddHabit = () => {
 
     const createHabit = async () => {
         const updatedHabits = [...habits, habit]
+        console.log(habit)
 
         try {
+            console.log(habit)
             await axiosInstance.put(`/users/habits/${getUserId()}`, { habits: updatedHabits })
             navigate('/')
         } catch (error) {
-            console.log(error)
             setError(error.message) || setError(error.response.data.message)
         }
     }
@@ -80,6 +85,10 @@ const AddHabit = () => {
                                 }))} > +</button>
                             </div>
                         </div>
+
+                        <GridSelector className="form__group" onChange={handleChange} items={ICONS} title="Icons" name="icon" />
+
+                        <GridSelector className="form__group" onChange={handleChange} items={COLORS} title="Color" name="color" backgroundImage={false} />
 
                         {error}
                         <button

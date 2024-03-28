@@ -40,11 +40,11 @@
 	resize: none;
 }
 
-.user-section__container form .form__group input:focus-visible {
+/* .user-section__container form .form__group input:focus-visible {
 }
 
 .user-section__container form .form__group label {
-}
+} */
 
 .user-section__container form button {
 	max-width: max-content;

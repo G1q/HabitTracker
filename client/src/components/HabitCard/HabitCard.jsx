@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const HabitCard = ({ habit }) => {
     return (
-        <article className="habit__card">
+        <article className="habit__card" style={{ '--_color': habit.color }}>
             <header className='habit__card--header'>
                 <Link to='/habits/edit' state={{ id: habit._id }}><h2 className='habit__card--title'>
-                    <img src={habit.icon} alt="habit icon" className='habit__card--icon' />
+                    <img src={`img/${habit.icon}`} alt="habit icon" className='habit__card--icon' />
                     <span>{habit.title}</span>
                 </h2></Link>
                 <button>✔</button>
