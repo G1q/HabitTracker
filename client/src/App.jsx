@@ -6,6 +6,7 @@ import Login from './pages/Login/Login'
 import Homepage from './pages/Homepage/Homepage'
 import AddHabit from './pages/AddHabit/AddHabit'
 import EditHabit from './pages/EditHabit/EditHabit'
+import Habit from './pages/Habit/Habit'
 
 function App() {
 	return (
@@ -38,7 +39,7 @@ function App() {
 						/>
 						<Route
 							path="/habits/:id"
-							element={<h1>Habit Page</h1>}
+							element={<Habit />}
 						/>
 						<Route
 							path="/profile"

@@ -1,0 +1,73 @@
+.habit__title {
+	--_size: 2.5rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.habit__title img {
+	width: max(calc(var(--_size) - 1rem), 1rem);
+	aspect-ratio: 1;
+}
+
+.habit__title span {
+	margin: 0;
+	line-height: 1;
+	font-size: var(--_size);
+}
+
+.habit__months {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.habit__actions {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-block: 2rem;
+}
+
+.habit__actions button {
+	padding: 0.5rem 2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	border-radius: 0.25em;
+	border: 1px solid var(--_btn-clr, #333);
+	background-color: var(--_btn-clr, #efefef);
+	color: var(--_btn-text, #333);
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 250ms ease-in-out;
+	font-family: inherit;
+}
+
+.habit__actions button:is(:hover, :focus-visible) {
+	background-color: color-mix(in oklab, var(--_btn-clr) 85%, black);
+}
+
+.habit__actions button:focus-visible {
+	outline: 2px solid var(--_btn-clr);
+	outline-offset: 3px;
+}
+
+.habit__actions button svg {
+	font-size: 1rem;
+}
+
+.habit__complete-btn {
+	--_btn-clr: forestgreen;
+	--_btn-text: #fff;
+}
+
+.habit__edit-btn {
+	--_btn-clr: royalblue;
+	--_btn-text: #fff;
+}
+
+.habit__delete-btn {
+	--_btn-clr: crimson;
+	--_btn-text: #fff;
+}

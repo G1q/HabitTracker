@@ -3,8 +3,8 @@
 	border-radius: 0.25rem;
 	padding: 1rem;
 	box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
-	color: var(--_color);
-	background-color: color-mix(in oklab, var(--_color) 25%, white);
+	color: var(--_color, #333);
+	background-color: color-mix(in oklab, var(--_color, #333) 25%, white);
 }
 
 .habit__card--header {
@@ -20,7 +20,7 @@
 	font-size: 1.25rem;
 	margin: 0;
 	line-height: 1;
-	color: var(--_color);
+	color: var(--_color, #333);
 }
 
 .habit__card--icon {
@@ -55,9 +55,9 @@
 }
 
 .habit__card--months button {
-	background-color: color-mix(in oklab, var(--_color) 50%, white);
-	color: var(--_color);
-	border: 1px solid color-mix(in oklab, var(--_color) 75%, white);
+	background-color: color-mix(in oklab, var(--_color, #333) 50%, white);
+	color: var(--_color, #333);
+	border: 1px solid color-mix(in oklab, var(--_color, #333) 75%, white);
 	border-radius: 0.25rem;
 	cursor: pointer;
 }

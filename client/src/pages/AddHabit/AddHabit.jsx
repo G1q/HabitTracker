@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './AddHabit.css'
 import { useAuth } from '../../contexts/AuthContext'
 import { useEffect, useState } from 'react'
