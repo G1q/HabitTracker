@@ -17,7 +17,7 @@ Pages:
 - Login✔
 - Add habit✔
 - Edit habit✔
-- Individual habit
+- Individual habit✔
 - User / profile page
 - User settings
 - Edit user

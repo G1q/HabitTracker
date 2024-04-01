@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import Calendar from '../Calendar/Calendar'
 import './HabitCard.css'
 import { Link } from 'react-router-dom'
 
@@ -14,12 +15,7 @@ const HabitCard = ({ habit }) => {
             </header>
             <main className='habit__card--content'>
                 <p className='habit__card--description'>{habit.description}</p>
-                <div className='habit__card--months'>
-                    <button>Prev month</button>
-                    <p className='habit__card--current-month'>{new Date().toLocaleString('default', { month: 'long' })}</p>
-                    <button>Next month</button>
-                </div>
-                <div>Calendar</div>
+                <Calendar habitName={habit.title} />
             </main>
         </article>
     )

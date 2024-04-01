@@ -43,21 +43,3 @@
 .habit__card--description {
 	font-size: 0.875rem;
 }
-
-.habit__card--months {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.habit__card--current-month {
-	margin: 0;
-}
-
-.habit__card--months button {
-	background-color: color-mix(in oklab, var(--_color, #333) 50%, white);
-	color: var(--_color, #333);
-	border: 1px solid color-mix(in oklab, var(--_color, #333) 75%, white);
-	border-radius: 0.25rem;
-	cursor: pointer;
-}
