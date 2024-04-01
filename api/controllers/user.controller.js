@@ -93,7 +93,7 @@ const deleteUser = async (req, res) => {
 }
 
 // User habits
-const addHabit = async (req, res) => {
+const editHabits = async (req, res) => {
 	const { id } = req.params
 	const { habits } = req.body
 
@@ -120,4 +120,4 @@ const getHabits = async (req, res) => {
 	}
 }
 
-module.exports = { createUser, getUsers, getUser, updateUser, deleteUser, addHabit, getHabits }
+module.exports = { createUser, getUsers, getUser, updateUser, deleteUser, editHabits, getHabits }

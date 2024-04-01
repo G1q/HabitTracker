@@ -44,10 +44,8 @@ const AddHabit = () => {
 
     const createHabit = async () => {
         const updatedHabits = [...habits, habit]
-        console.log(habit)
 
         try {
-            console.log(habit)
             await axiosInstance.put(`/users/habits/${getUserId()}`, { habits: updatedHabits })
             navigate('/')
         } catch (error) {

@@ -29,7 +29,7 @@
 	margin-block: 2rem;
 }
 
-.habit__actions button {
+.habit__actions :is(button, a) {
 	padding: 0.5rem 2rem;
 	display: flex;
 	align-items: center;
@@ -44,16 +44,16 @@
 	font-family: inherit;
 }
 
-.habit__actions button:is(:hover, :focus-visible) {
+.habit__actions :is(button, a):is(:hover, :focus-visible) {
 	background-color: color-mix(in oklab, var(--_btn-clr) 85%, black);
 }
 
-.habit__actions button:focus-visible {
-	outline: 2px solid var(--_btn-clr);
+.habit__actions :is(button, a):focus-visible {
+	outline: 2px solid var(--_btn-clr, #333);
 	outline-offset: 3px;
 }
 
-.habit__actions button svg {
+.habit__actions :is(button, a) svg {
 	font-size: 1rem;
 }
 

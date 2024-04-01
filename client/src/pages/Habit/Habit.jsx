@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Navigate, useParams, useNavigate } from 'react-router-dom'
+import { Navigate, useParams, useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import './Habit.css'
 import { useEffect, useState } from 'react'
@@ -52,31 +52,13 @@ const Habit = () => {
     }
 
     const completeHabit = async () => {
-        setHabit(prev => ({
-            ...prev,
-            completed: prev.completed + 1
-        }))
-
         try {
             const response = await axiosInstance.get(`/users/habits/${getUserId()}`)
             const habitsArray = response.data
-            await axiosInstance.put(`/users/habits/${getUserId()}`, { habits: [...habitsArray, habit] })
-
-        } catch (error) {
-            setError(error.message) || setError(error.response.data.message)
-        }
-    }
-
-    const resetHabit = async () => {
-        setHabit(prev => ({
-            ...prev,
-            completed: 0
-        }))
-
-        try {
-            const response = await axiosInstance.get(`/users/habits/${getUserId()}`)
-            const habitsArray = response.data
-            await axiosInstance.put(`/users/habits/${getUserId()}`, { habits: [...habitsArray, habit] })
+            const habitIndex = habitsArray.findIndex(habit => habit._id === id)
+            habitsArray[habitIndex] = habit
+            await axiosInstance.put(`/users/habits/${getUserId()}`, { habits: habitsArray })
+            navigate('/')
 
         } catch (error) {
             setError(error.message) || setError(error.response.data.message)
@@ -100,23 +82,29 @@ const Habit = () => {
                     </div>
                     <div>Calendar</div>
                     <div className="habit__actions">
-                        <button className='habit__complete-btn' onClick={completeHabit}>
+                        <button className='habit__complete-btn' onClick={() => setHabit(prev => ({
+                            ...prev,
+                            completed: prev.completed < prev.completionsPerDay ? prev.completed + 1 : prev.completionsPerDay
+                        }))}>
                             <IoCheckmark />
                             <span>Complete {`(${habit.completed} / ${habit.completionsPerDay})`}</span>
                         </button>
-                        <button className='habit__reset-btn' onClick={resetHabit}>
+                        <button className='habit__reset-btn' onClick={() => setHabit(prev => ({
+                            ...prev,
+                            completed: 0
+                        }))}>
                             <IoArrowUndoCircleOutline />
                             <span>Reset today</span>
                         </button>
-                        <button className='habit__edit-btn'>
+                        <Link to={`/habits/edit`} state={{ id: habit._id }} className='habit__edit-btn'>
                             <RiEditLine />
                             <span>Edit</span>
-                        </button>
-                        <button className='habit__delete-btn' onClick={deleteHabit}>
+                        </Link>
+                        <button className='habit__delete-btn' onClick={() => deleteHabit()}>
                             <IoTrashOutline />
                             <span>Delete</span>
                         </button>
-
+                        <button className='habit__complete-btn' onClick={completeHabit}>Save changes</button>
                     </div>
                 </>
             ) : (

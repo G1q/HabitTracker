@@ -24,11 +24,16 @@
 	border-radius: 0.25rem;
 	overflow: hidden;
 	cursor: pointer;
-	transition: all 250ms ease-in-out;
+	transition: background-color 250ms ease-in-out;
 }
 
 .grid-selector__item-wrapper.have-img:has(input:checked) {
 	background-color: #ff6200;
+}
+
+.grid-selector__item-wrapper.have-bg:has(input:checked) {
+	outline: 3px solid #ff6200;
+	outline-offset: 2px;
 }
 
 .grid-selector__item-wrapper label {
